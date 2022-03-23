@@ -5,6 +5,7 @@ import android.app.DatePickerDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.view.WindowManager
 import android.widget.*
 import com.g2academy.training.models.*
 import com.g2academy.training.networks.RegistrationInterface
@@ -33,6 +34,14 @@ class RegistrationActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registration)
+        try {
+            this.supportActionBar!!.hide()
+            window.setFlags(
+                WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN
+            )
+        }
+        catch (e:Exception){}
         txt_fullname = findViewById(R.id.txt_fullname)
         txt_username = findViewById(R.id.txt_name)
         txt_password = findViewById(R.id.txt_price)
